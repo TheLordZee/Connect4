@@ -4,12 +4,18 @@
   <link href="connect4.css" rel="stylesheet">
 </head>
 <body>
+  <h1>Connect 4</h1>
+  <h2>Player One's Turns: <span id="p1tries">0</span></h2>
+  <h2>Player Two's Turns: <span id="p2tries">0</span></h2>
+  <div id="game">
+    <table id="board"></table>
+  </div>
 
-<div id="game">
-  <table id="board"></table>
-</div>
+  <div id="end-game">
+    <div id="head"></div>
+    <div class='btn'id="restart-btn">Restart?</div>
+  </div>
 
-<script src="connect4.js"></script>
-
+  <script src="connect4.js"></script>
 </body>
 </html>

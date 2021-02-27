@@ -1,4 +1,17 @@
+body {
+  background-color: rgb(209, 138, 5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  z-index: 1;
+}
+
 /* game board table */
+
+#board{
+  margin: auto;
+}
 
 #board td {
   width: 50px;
@@ -13,8 +26,23 @@
   margin: 5px;
   width: 80%;
   height: 80%;
+  border: .5px solid black;
+  border-radius: 50%;
+  position: relative;
+  animation: drop .5s;
 }
 
+@keyframes drop {
+  0% {transform: translateY(-250px);}
+  100% {transform: translateY(0px);}
+}
+
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
 
 /* column-top is table row of clickable areas for each column */
@@ -25,4 +53,34 @@
 
 #column-top td:hover {
   background-color: gold;
+}
+
+h1 {
+  font-size: 3em;
+  color: black;
+  padding: 0px;
+}
+
+#end-game{
+  display: none;
+  position: absolute;
+  background-color: rgba(1, 25, 75, 0.75);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  justify-content: space-around;
+}
+
+#head {
+  font-size: 6rem;
+  color: rgb(41, 98, 255);
+}
+
+.btn {
+  font-size: 5vh;
+  color: rgb(41, 98, 255);
 }

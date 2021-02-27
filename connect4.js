@@ -11,6 +11,7 @@ const HEIGHT = 6;
 let currPlayer = 1; // active player: 1 or 2
 const board = []; // array of rows, each row is array of cells  (board[y][x])
 
+// Sets base score
 let playerOne = 0;
 let playerTwo = 0;
 let p1score = document.getElementById('p1tries');
@@ -93,13 +94,14 @@ function placeInTable(y, x) {
   console.log(board);
 }
 
+// Adds functionality to the restart button
 let restart = document.querySelector('#restart-btn');
 restart.addEventListener('click', function(){
   location.reload();
 });
 
 /** endGame: announce game end */
-
+// Announces game end and allows for you to restart
 function endGame(msg) {
   // TODO: pop up alert message
   document.getElementById('head').innerText = msg;
@@ -150,6 +152,7 @@ function handleClick(evt) {
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
 
+// Checks for tie
 const checkForTie = () => {
   for(let i = 0; i < HEIGHT; i++){
     if(board[i].indexOf('empty') !== -1){
